@@ -1,0 +1,51 @@
+<?php
+/**
+ * Design csl/reviews/recent.phtml
+ *
+ * @package     CSL_RecentReviews
+ * @author      Cristian Sanclemente <cristian@clickelectrodomesticos.com>
+ * @copyright   2014-2015 CSL
+ */
+?>
+
+
+<?php if ($this->isenable()): ?>
+	<?php $r = $this->getReviews() ?>
+	<?php if ($r): ?>
+		<div class="block block-cart">
+			<div class="block-title">
+				<b><?php echo "PRODUCT REVIEW'S" ?></b>
+			</div>
+			<?php foreach ($r as $item): ?>
+				<h4><a href="<?php echo $item->getReviewUrl() ?>"><?php echo mb_strtoupper($item->getTitle(), 'utf-8') ?></a></h4>
+				<?php 	$ratingcount = 0; 
+						$ratingtotal = 0;
+						foreach ($item->getRatingVotes() as $_vote): 
+							$ratingcount++; 
+							$ratingtotal = $ratingtotal + $_vote->getPercent();
+						endforeach;
+						$rating_total = $ratingtotal / $ratingcount/20;
+						$rating_total_ent = intval($rating_total); 
+						if ($rating_total - $rating_total_ent == 0)
+							$rating_total_literal = number_format($rating_total, 0, ',', '.');
+						else
+							$rating_total_literal = number_format($rating_total, 1, ',', '.');
+				?>
+				<div id="nickname"><?php echo 'Review By <b>' . $item->getNickname() . '</b>' ?></div>
+				<div class="ratings-table">
+					<div class="rating-box">
+						<div title="Global Classification: <?php echo  $rating_total_literal  ?>" class="rating" style="width: <?php echo round($ratingtotal / $ratingcount); ?>%;"></div>
+					</div>
+				</div>
+				<b><span style="color:#390"><? echo $rating_total_literal; ?></span></b>
+				<div style="clear:both"></div>
+				<?php if (Mage::getStoreConfig('csl/recentreviews_config/image', Mage::app()->getStore())): ?>
+					<?php $img = $this->getProductImage($item->getData('entity_pk_value')) ?>
+					<a href="<?php echo $item->getReviewUrl() ?>"><img src="<?php echo $img ?>" width="60px" align="left" style="border:1px solid #CECECE; margin: 5px;" /></a>
+				<?php endif; ?>
+				<?php echo $item->getDetail() ?>
+				<div style="clear:both"></div>
+			<?php endforeach; ?>
+		</div>
+	<?php endif; ?>
+<?php endif; ?>

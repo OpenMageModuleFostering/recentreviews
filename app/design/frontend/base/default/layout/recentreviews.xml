@@ -1,0 +1,14 @@
+<layout version="0.1.0">
+	 <default translate="label">
+		<reference name="left">
+			<block type="recentreviews/reviews" name="Recent" template="csl/reviews/recent.phtml" />
+		</reference>
+    </default>
+	
+	<ruta_recentreviews_index_index>
+		<reference name="root">
+	       <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+	</ruta_recentreviews_index_index>
+	
+</layout>

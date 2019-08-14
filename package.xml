@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package>
+    <name>RecentReviews</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license>OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Show Recent Product Review's in frontend Magento</summary>
+    <description>With RecentReviews you can show your latest product reviews. &#xD;
+&#xD;
+With the extension you can: &#xD;
+&#xD;
+Show the views of the product with your rating.&#xD;
+Choose how many views are shown.&#xD;
+Choose whether to display the product image.&#xD;
+&#xD;
+He also RecentReviews you will help your customers to see quickly what other people think about your products.</description>
+    <notes>RecentReviews</notes>
+    <authors><author><name>Cristian Sanclemente</name><user>crissanclick</user><email>cristian@clickelectrodomesticos.com</email></author></authors>
+    <date>2014-08-08</date>
+    <time>08:35:51</time>
+    <contents><target name="magecommunity"><dir name="CSL"><dir name="RecentReviews"><dir><dir name="Block"><file name="Reviews.php" hash="a7ebf92244c4428b7460e25dd1d5fe1c"/></dir><dir name="Helper"><file name="Data.php" hash="69d0bbe9f77b5610bea3646b2e473aa8"/></dir><dir name="Model"><file name="Reviews.php" hash="6ae207f0eca59aadb491ab1dee36e071"/></dir><dir name="controllers"><file name="IndexController.php" hash="63bcff115fd60282ba5bbc083e065eb8"/></dir><dir name="etc"><file name="config.xml" hash="dad18525a156689aaa8d4557a7943d22"/><file name="system.xml" hash="0c283b1cca5745c0881769280cdd342e"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="csl"><dir><dir name="reviews"><file name="recent.phtml" hash="b829f6ad98e360608073708484dc7944"/></dir></dir></dir></dir><dir name="layout"><file name="recentreviews.xml" hash="09b4138652a56030d810859cdb303702"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="CSL_RecentReviews.xml" hash="ed3639a3282e14d4f29303b055bd7e70"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php><package><name>Mage_Core_Modules</name><channel>community</channel><min>1.6.0.0</min><max>1.9</max></package><extension><name>gd</name><min>2.0.28</min><max>3.0</max></extension></required></dependencies>
+</package>

@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/RecentReviews",
+    "type": "magento-module",
+    "license": "OSL-v3.0",
+    "homepage": "",
+    "description": "Show Recent Product Review's in frontend Magento",
+    "authors": [
+    {
+        "name": "Cristian Sanclemente",
+        "email": "cristian@clickelectrodomesticos.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

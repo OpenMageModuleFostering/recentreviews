@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <CSL_RecentReviews>
+      <version>0.1.0</version>
+    </CSL_RecentReviews>
+  </modules>
+  <global>
+    <helpers>
+      <recentreviews>
+        <class>CSL_RecentReviews_Helper</class>
+      </recentreviews>
+    </helpers>
+	<models>
+	  <recentreviews>
+		<class>CSL_RecentReviews_Model</class>
+	  </recentreviews>
+	</models>
+	<blocks>
+	  <recentreviews>
+		<class>CSL_RecentReviews_Block</class>
+	  </recentreviews>
+	</blocks>
+  </global>
+  <frontend>
+       <routers>
+          <ruta_recentreviews>
+              <use>standard</use>
+              <args>
+                 <module>CSL_RecentReviews</module>
+                 <frontName>recent</frontName>
+              </args>
+           </ruta_recentreviews>
+       </routers>
+	   <layout>
+            <updates>
+                 <recentreviews>
+                          <file>recentreviews.xml</file>
+                  </recentreviews>
+            </updates>
+		</layout>
+    </frontend>
+<adminhtml>
+    <acl>
+        <resources>
+            <all>
+                <title>CSL</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <csl>
+                                        <title>CSL - All</title>
+                                    </csl>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</adminhtml>
+</config> 
